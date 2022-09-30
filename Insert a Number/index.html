@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Number</title>
+</head>
+
+<body>
+    <h2 style="text-align: center;">"Insert The Single Number Inside The Array Box"</h2>
+    <p style="text-align: center;">Your Current Array Number is<br>[ 20,21,22,23,24,25,26 ]</p>
+    <input type="text" id="position" placeholder="Enter a Position">
+    <br>
+    <br>
+    <input type="text" id="input" placeholder="Enter a Number">
+    <br>
+    <br>
+    <button style="padding: 5px 10px;background-color: blue; color:white" onclick="insertFunction()">Insert</button>
+    <p id="result">Result Will Appear here:</p>
+    <!-- <input type="text" id="result"> -->
+    <script>
+        function insertFunction() {
+            let arrayNumber = [20, 21, 22, 23, 24, 25, 26]
+            let arrayPosition = document.getElementById("position").value
+            arrayPosition = parseInt(arrayPosition)
+            let arrayInput = document.getElementById("input").value
+            // arrayInput = parseInt(arrayInput)
+            if (!isNaN(arrayPosition) && (!isNaN(arrayInput)) && (arrayPosition <= arrayNumber.length)) {
+
+                for (let i = arrayNumber.length; i >= 0; i--) {
+                    if (i >= arrayPosition) {
+                        arrayNumber[i + 1] = arrayNumber[i]
+                        if (i == arrayPosition) {
+                            arrayNumber[i] = arrayInput
+                        }
+                    }
+                    // arrayNumber.splice(arrayPosition, 0 /*this count How Many Number Will be Deleted*/, arrayInput)
+                    // document.getElementById("result").innerHTML = arrayNumber
+                }
+                document.getElementById("result").innerHTML = arrayNumber
+            }
+            else {
+                alert("You Entered the Invalid Input")
+            }
+        }
+
+    </script>
+</body>
+
+</html>
