@@ -1,38 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Remove a Array</title>
-</head>
+  </head>
 
-<body>
-    <h2 style="text-align: center;">Remove a Number</h2>
-    <p style="text-align:center ;">The Numbers Are <br>[ 1,2,3,4,5 ]</p>
-    <input type="text" id="inputPosition" placeholder="Enter The Positon">
+  <body>
+    <h2 style="text-align: center">Remove a Number</h2>
+    <p style="text-align: center">The Numbers Are <br />[ 1,2,3,4,5 ]</p>
+    <input type="text" id="inputPosition" placeholder="Enter The Positon" />
     <button onclick="removeFunc()">Remove</button>
-    <br>
-    <br>
+    <br />
+    <br />
     <div id="result">Result Will Apper Here:</div>
 
     <script>
-        function removeFunc() {
-            let arrayNumbers = [1, 2, 3, 4, 5]
-            let inputPosition = document.getElementById("inputPosition").value
-            inputPosition = parseInt(inputPosition)//this allow only teh before decimal number and begin number with lett like:(1sr=1)
-            if ((inputPosition <= arrayNumbers.length - 1) && (inputPosition >= 0) && (inputPosition % 1 === 0)) //5)
-            {
-                arrayNumbers.splice(inputPosition, 1)
-                document.getElementById("result").innerHTML = arrayNumbers
-            }
-            else {
-                alert("Enter a Valid Number")
-            }
-
+      function removeFunc() {
+        let arrayNumbers = [1, 2, 3, 4, 5, 6];
+        let inputPosition = document.getElementById("inputPosition").value;
+        inputPosition = parseInt(inputPosition); //this allow only teh before decimal number and begin number with lett like:(1sr=1)
+        if (
+          inputPosition <= arrayNumbers.length - 1 &&
+          inputPosition >= 0 &&
+          inputPosition % 1 === 0
+        ) {
+          //5)
+          arrayNumbers.splice(inputPosition, 1);
+          document.getElementById("result").innerHTML = arrayNumbers;
+        } else {
+          alert("Enter a Valid Number");
         }
+      }
     </script>
-</body>
-
+  </body>
 </html>
